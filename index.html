@@ -14,14 +14,12 @@
       --white: #FFFFFF;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      min-height: 100vh;
       background: var(--bg);
+      min-height: 100vh;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         "Noto Sans TC", sans-serif;
       display: flex;
@@ -43,7 +41,6 @@
       font-size: 42px;
       font-weight: 900;
       letter-spacing: 2px;
-      text-transform: uppercase;
     }
 
     .subtitle {
@@ -54,20 +51,20 @@
     }
 
     .divider {
-      margin: 36px 0;
+      margin: 40px 0;
       height: 2px;
       background: var(--line);
     }
 
     .download-section {
       text-align: center;
-      padding: 36px 0;
+      padding: 40px 0;
       border: 2px solid var(--line);
     }
 
     .download-btn {
       display: inline-block;
-      padding: 18px 48px;
+      padding: 18px 52px;
       background: var(--accent);
       color: var(--bg);
       font-size: 20px;
@@ -77,39 +74,31 @@
       border: 2px solid var(--accent);
     }
 
-    .warning-box {
-      margin-top: 36px;
-      padding: 24px;
-      border: 2px solid var(--line);
+    .install-link {
+      display: block;
+      margin-top: 26px;
       font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .steps-box {
-      margin-top: 48px;
-      border-top: 2px solid var(--line);
-      padding-top: 28px;
-    }
-
-    h2 {
-      margin: 0 0 18px;
-      font-size: 22px;
-      font-weight: 800;
       letter-spacing: 1px;
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    ol {
-      margin: 0;
-      padding-left: 22px;
-      line-height: 2;
+    /* ⚠️ 提示改成低存在感 */
+    .note {
+      margin-top: 64px;   /* 與上方拉開 */
+      padding-top: 18px;
+      border-top: 2px solid var(--line);
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--line);
     }
 
     code {
       background: var(--line);
       color: var(--white);
-      padding: 3px 6px;
+      padding: 2px 6px;
+      font-size: 12px;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 13px;
     }
 
     footer {
@@ -139,24 +128,17 @@
       >
         立即下載 (ZIP 格式)
       </a>
+
+      <a class="install-link" href="install.html">
+        查看如何手動安裝 →
+      </a>
     </div>
 
-    <div class="warning-box">
-      <strong>⚠️ 下載與安裝提示：</strong><br />
-      1. 點擊下載後，若 Chrome 提示「無法安全下載」，請按
-      <code>Ctrl + J</code> 並在該檔案點擊「<strong>保留</strong>」。<br />
-      2. 這是因為本插件未透過官方商店發布，檔案經檢測安全無毒，請放心使用。
-    </div>
-
-    <div class="steps-box">
-      <h2>如何手動安裝？</h2>
-      <ol>
-        <li>下載 <code>AdBlocker.zip</code> 並完成解壓縮。</li>
-        <li>在 Chrome 網址列輸入 <code>chrome://extensions</code>。</li>
-        <li>開啟右上角的「<strong>開發人員模式</strong>」。</li>
-        <li>點擊左上角的「<strong>載入未封裝項目</strong>」。</li>
-        <li>選擇你剛才解壓縮出來的「<strong>資料夾</strong>」。</li>
-      </ol>
+    <div class="note">
+      ⚠️ 下載與安裝提示：<br />
+      若 Chrome 顯示「無法安全下載」，請按
+      <code>Ctrl + J</code> 並選擇「保留」。
+      本插件未透過官方商店發布，屬正常現象。
     </div>
 
     <footer>
