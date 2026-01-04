@@ -16,9 +16,7 @@
 
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -57,13 +55,13 @@
       margin: 56px 0;
     }
 
-    /* 行動區塊（重點在這） */
+    /* 行動區塊（兩顆按鈕並排） */
     .actions {
       margin-top: 80px;
       display: flex;
-      flex-direction: column; /* 上下排列 */
-      align-items: flex-start;
-      gap: 72px;               /* 關鍵：拉開距離 */
+      justify-content: flex-start;  /* 左對齊 */
+      align-items: center;
+      gap: 96px;                     /* 按鈕之間距離很大，海報感 */
     }
 
     .btn {
