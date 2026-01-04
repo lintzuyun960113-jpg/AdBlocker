@@ -1,0 +1,87 @@
+/* 設定整體的寬度與字型 */
+body {
+  width: 280px; /* 視窗寬度 */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* 標題樣式 */
+h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+}
+p {
+  margin: 5px 0 15px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* 狀態文字樣式 */
+.status-box {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #2196F3; /* 預設藍色 */
+}
+
+/* === 核心：滑動開關的 CSS (可以直接複製使用) === */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* 隱藏原本的 checkbox */
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* 滑軌的底色 */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc; /* 關閉時的灰色 */
+  transition: .4s;
+  border-radius: 34px;
+}
+
+/* 滑塊原本的圓點 */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px; width: 26px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* 當 checkbox 被勾選時 (開啟狀態) */
+input:checked + .slider {
+  background-color: #2196F3; /* 開啟時變藍色 */
+}
+
+/* 當 checkbox 被勾選時，圓點往右移 */
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #aaa;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
