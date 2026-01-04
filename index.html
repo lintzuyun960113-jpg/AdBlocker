@@ -2,13 +2,13 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
-  <title>下載廣告阻擋器</title>
+  <title>Chrome 廣告阻擋器</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     :root {
       --bg: #0B132B;
-      --panel: #1C2541;
+      --poster: #1C2541;
       --line: #3A506B;
       --accent: #5BC0BE;
       --white: #FFFFFF;
@@ -16,134 +16,148 @@
 
     * { box-sizing: border-box; }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--bg);
-      min-height: 100vh;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         "Noto Sans TC", sans-serif;
-      display: flex;
-      justify-content: center;
       color: var(--white);
     }
 
-    .container {
-      width: 92%;
-      max-width: 760px;
-      margin: 80px 0;
-      padding: 48px 44px;
-      background: var(--panel);
-      border: 2px solid var(--line);
+    /* 海報本體 */
+    .poster {
+      max-width: 820px;
+      margin: 80px auto 120px;
+      padding: 72px 64px;
+      background: var(--poster);
     }
 
     h1 {
       margin: 0;
-      font-size: 42px;
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+
+    .line {
+      width: 100%;
+      height: 2px;
+      background: var(--line);
+      margin: 48px 0;
+    }
+
+    .actions {
+      margin-top: 56px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 18px 48px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-decoration: none;
+      border: 2px solid;
+      color: var(--bg);
+      background: var(--accent);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* 安裝教學區 */
+    .install {
+      margin-top: 140px;
+      padding-top: 60px;
+      border-top: 2px solid var(--line);
+    }
+
+    .install h2 {
+      margin: 0 0 28px;
+      font-size: 32px;
       font-weight: 900;
       letter-spacing: 2px;
     }
 
-    .subtitle {
-      margin-top: 14px;
-      font-size: 15px;
-      letter-spacing: 1px;
-      color: var(--accent);
-    }
-
-    .divider {
-      margin: 40px 0;
-      height: 2px;
-      background: var(--line);
-    }
-
-    .download-section {
-      text-align: center;
-      padding: 40px 0;
-      border: 2px solid var(--line);
-    }
-
-    .download-btn {
-      display: inline-block;
-      padding: 18px 52px;
-      background: var(--accent);
-      color: var(--bg);
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-decoration: none;
-      border: 2px solid var(--accent);
-    }
-
-    .install-link {
-      display: block;
-      margin-top: 26px;
-      font-size: 14px;
-      letter-spacing: 1px;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    /* ⚠️ 提示改成低存在感 */
-    .note {
-      margin-top: 64px;   /* 與上方拉開 */
-      padding-top: 18px;
-      border-top: 2px solid var(--line);
-      font-size: 13px;
-      line-height: 1.8;
-      color: var(--line);
+    ol {
+      padding-left: 22px;
+      line-height: 2.2;
+      font-size: 16px;
     }
 
     code {
       background: var(--line);
-      color: var(--white);
-      padding: 2px 6px;
-      font-size: 12px;
+      padding: 3px 6px;
+      font-size: 14px;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     }
 
-    footer {
-      margin-top: 56px;
-      padding-top: 16px;
-      border-top: 2px solid var(--line);
-      font-size: 12px;
-      letter-spacing: 1px;
+    /* ⚠️ 提示（低存在感、滑到下面才看到） */
+    .note {
+      margin-top: 60px;
+      font-size: 13px;
+      line-height: 1.8;
       color: var(--line);
-      text-align: center;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+
+  <div class="poster">
     <h1>Chrome 廣告阻擋器</h1>
     <p class="subtitle">乾淨的網路體驗，從這裡開始</p>
 
-    <div class="divider"></div>
+    <div class="line"></div>
 
-    <div class="download-section">
+    <div class="actions">
       <a
-        class="download-btn"
+        class="btn"
         href="https://lintzuyun960113-jpg.github.io/AdBlocker/download/AdBlocker.zip"
         download="AdBlocker.zip"
       >
-        立即下載 (ZIP 格式)
+        立即下載
       </a>
 
-      <a class="install-link" href="install.html">
-        查看如何手動安裝 →
+      <a class="btn secondary" href="#install">
+        安裝教學
       </a>
     </div>
 
-    <div class="note">
-      ⚠️ 下載與安裝提示：<br />
-      若 Chrome 顯示「無法安全下載」，請按
-      <code>Ctrl + J</code> 並選擇「保留」。
-      本插件未透過官方商店發布，屬正常現象。
-    </div>
+    <!-- 安裝教學 -->
+    <div id="install" class="install">
+      <h2>安裝教學</h2>
 
-    <footer>
-      本網頁僅供學術與技術分享用途
-    </footer>
+      <ol>
+        <li>下載 <code>AdBlocker.zip</code> 並解壓縮。</li>
+        <li>在 Chrome 網址列輸入 <code>chrome://extensions</code>。</li>
+        <li>開啟右上角「開發人員模式」。</li>
+        <li>點擊「載入未封裝項目」。</li>
+        <li>選擇解壓後的資料夾。</li>
+      </ol>
+
+      <div class="note">
+        ⚠️ 若 Chrome 顯示「無法安全下載」，請至下載列表選擇「保留」。
+        因未上架 Chrome 商店，屬正常情況。
+      </div>
+    </div>
   </div>
+
 </body>
 </html>
