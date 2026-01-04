@@ -20,25 +20,10 @@
 
     body {
       margin: 0;
-      background: linear-gradient(180deg, #0B132B 0%, #1C2541 100%);
+      background: var(--bg);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         "Noto Sans TC", sans-serif;
       color: var(--white);
-      position: relative;
-    }
-
-    /* 幾何線條背景裝飾 */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 20%;
-      left: -40px;
-      width: 120%;
-      height: 60%;
-      border-top: 2px solid var(--line);
-      border-bottom: 2px solid var(--line);
-      opacity: 0.05;
-      pointer-events: none;
     }
 
     /* 海報本體 */
@@ -55,17 +40,6 @@
       font-size: 52px;
       font-weight: 900;
       letter-spacing: 3px;
-      position: relative;
-    }
-
-    /* 標題下方裝飾線 */
-    h1::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 3px;
-      background: var(--accent);
-      margin-top: 16px;
     }
 
     .subtitle {
@@ -88,7 +62,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 96px; /* 大間距 */
+      gap: 96px; /* 按鈕之間距離很大 */
     }
 
     .btn {
@@ -100,7 +74,7 @@
       border: 2px solid var(--accent);
       background: var(--accent);
       color: var(--bg);
-      transition: transform 0.2s, background 0.2s;
+      transition: transform 0.2s, background 0.2s; /* hover 漂浮+漸變 */
     }
 
     .btn:hover {
@@ -111,17 +85,6 @@
     .btn.secondary {
       background: transparent;
       color: var(--accent);
-    }
-
-    .btn.secondary::after {
-      content: "→";
-      margin-left: 8px;
-      font-weight: 900;
-      transition: margin-left 0.2s;
-    }
-
-    .btn.secondary:hover::after {
-      margin-left: 16px;
     }
 
     /* 安裝教學區 */
