@@ -7,14 +7,11 @@
 
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1e40af;
-      --bg: #f8fafc;
-      --text-main: #0f172a;
-      --text-sub: #64748b;
-      --border: #e5e7eb;
-      --warn-bg: #fff7ed;
-      --warn-border: #fb923c;
+      --bg-main: #0B132B;
+      --bg-card: #1C2541;
+      --bg-soft: #3A506B;
+      --accent: #5BC0BE;
+      --white: #FFFFFF;
     }
 
     * {
@@ -22,102 +19,138 @@
     }
 
     body {
+      margin: 0;
+      min-height: 100vh;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         "Noto Sans TC", sans-serif;
-      background: linear-gradient(180deg, #eef2ff, #f8fafc);
-      margin: 0;
-      padding: 0;
+      background:
+        radial-gradient(800px 400px at top, #3a506b55, transparent),
+        linear-gradient(180deg, #0B132B, #1C2541);
       display: flex;
       justify-content: center;
-      color: var(--text-main);
+      color: var(--white);
     }
 
     .container {
-      max-width: 720px;
       width: 92%;
-      margin: 60px 0;
-      padding: 40px 36px;
-      background: white;
-      border-radius: 18px;
+      max-width: 720px;
+      margin: 70px 0;
+      padding: 42px 38px;
+      background: linear-gradient(
+        180deg,
+        #1C2541,
+        #16203a
+      );
+      border-radius: 20px;
       box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.08),
-        0 2px 6px rgba(0, 0, 0, 0.05);
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04);
     }
 
     h1 {
+      margin: 0;
       font-size: 36px;
       font-weight: 800;
-      letter-spacing: 0.5px;
-      margin: 0;
-      color: var(--primary);
+      letter-spacing: 1px;
+      color: var(--white);
     }
 
     .subtitle {
       margin-top: 10px;
-      font-size: 17px;
-      color: var(--text-sub);
+      font-size: 16px;
+      color: #c7d2fe;
+      opacity: 0.9;
     }
 
     .download-section {
-      margin: 36px 0 30px;
-      padding: 28px 0;
+      margin: 40px 0 34px;
+      padding: 30px 0;
       text-align: center;
-      border-top: 1px dashed var(--border);
-      border-bottom: 1px dashed var(--border);
+      border-top: 1px dashed #3A506B;
+      border-bottom: 1px dashed #3A506B;
     }
 
     .download-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 18px 42px;
+      gap: 12px;
+      padding: 18px 44px;
       background: linear-gradient(
         135deg,
-        var(--primary),
-        var(--primary-dark)
+        #5BC0BE,
+        #3aa9a6
       );
-      color: white;
+      color: #0B132B;
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 800;
       text-decoration: none;
-      border-radius: 14px;
-      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+      border-radius: 16px;
+      box-shadow:
+        0 10px 30px rgba(91, 192, 190, 0.45);
       transition: all 0.25s ease;
+      position: relative;
+    }
+
+    /* 小巧思：微光暈 */
+    .download-btn::after {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: inherit;
+      background: radial-gradient(
+        circle,
+        rgba(91, 192, 190, 0.35),
+        transparent 60%
+      );
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      z-index: -1;
     }
 
     .download-btn:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow:
+        0 16px 45px rgba(91, 192, 190, 0.6);
+    }
+
+    .download-btn:hover::after {
+      opacity: 1;
     }
 
     .warning-box {
-      background: var(--warn-bg);
-      border-left: 6px solid var(--warn-border);
+      margin: 34px 0;
       padding: 18px 20px;
-      border-radius: 10px;
-      margin: 30px 0;
+      background: linear-gradient(
+        180deg,
+        #233052,
+        #1C2541
+      );
+      border-left: 5px solid var(--accent);
+      border-radius: 12px;
       font-size: 14.5px;
-      line-height: 1.75;
-      color: #7c2d12;
+      line-height: 1.8;
+      color: #e5f9f7;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
     }
 
     .steps-box {
-      margin-top: 36px;
+      margin-top: 38px;
     }
 
     h2 {
+      margin-bottom: 14px;
       font-size: 22px;
       font-weight: 700;
-      margin-bottom: 14px;
+      color: var(--white);
       padding-bottom: 10px;
-      border-bottom: 2px solid var(--border);
+      border-bottom: 2px solid #3A506B;
     }
 
     ol {
       padding-left: 22px;
-      margin: 0;
       line-height: 2.1;
-      color: #1e293b;
+      color: #dbeafe;
+      margin: 0;
     }
 
     li {
@@ -125,19 +158,20 @@
     }
 
     code {
-      background: #f1f5f9;
+      background: rgba(255,255,255,0.08);
+      color: var(--accent);
       padding: 4px 8px;
       border-radius: 6px;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
       font-size: 14px;
-      color: #334155;
     }
 
     footer {
-      margin-top: 48px;
+      margin-top: 50px;
+      text-align: center;
       font-size: 12px;
       color: #94a3b8;
-      text-align: center;
+      opacity: 0.8;
     }
   </style>
 </head>
