@@ -7,11 +7,11 @@
 
   <style>
     :root {
-      --c-bg: #0B132B;
-      --c-card: #1C2541;
-      --c-soft: #3A506B;
-      --c-accent: #5BC0BE;
-      --c-white: #FFFFFF;
+      --bg: #0B132B;
+      --panel: #1C2541;
+      --line: #3A506B;
+      --accent: #5BC0BE;
+      --white: #FFFFFF;
     }
 
     * {
@@ -21,107 +21,105 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: var(--c-bg);
+      background: var(--bg);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         "Noto Sans TC", sans-serif;
       display: flex;
       justify-content: center;
-      color: var(--c-white);
+      color: var(--white);
     }
 
     .container {
       width: 92%;
-      max-width: 720px;
-      margin: 70px 0;
-      padding: 40px 36px;
-      background: var(--c-card);
-      border-radius: 18px;
-      border: 1px solid var(--c-soft);
+      max-width: 760px;
+      margin: 80px 0;
+      padding: 48px 44px;
+      background: var(--panel);
+      border: 2px solid var(--line);
     }
 
     h1 {
       margin: 0;
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--c-white);
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .subtitle {
-      margin-top: 10px;
-      font-size: 16px;
-      color: var(--c-accent);
+      margin-top: 14px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+
+    .divider {
+      margin: 36px 0;
+      height: 2px;
+      background: var(--line);
     }
 
     .download-section {
-      margin: 38px 0 32px;
-      padding: 28px 0;
       text-align: center;
-      border-top: 1px dashed var(--c-soft);
-      border-bottom: 1px dashed var(--c-soft);
+      padding: 36px 0;
+      border: 2px solid var(--line);
     }
 
     .download-btn {
       display: inline-block;
-      padding: 18px 42px;
-      background: var(--c-accent);
-      color: var(--c-bg);
+      padding: 18px 48px;
+      background: var(--accent);
+      color: var(--bg);
       font-size: 20px;
-      font-weight: 800;
+      font-weight: 900;
+      letter-spacing: 1px;
       text-decoration: none;
-      border-radius: 14px;
-      transition: transform 0.2s ease;
-    }
-
-    .download-btn:hover {
-      transform: translateY(-3px);
+      border: 2px solid var(--accent);
     }
 
     .warning-box {
-      margin: 32px 0;
-      padding: 18px 20px;
-      background: var(--c-card);
-      border-left: 5px solid var(--c-accent);
-      border-radius: 10px;
-      font-size: 14.5px;
-      line-height: 1.8;
-      border: 1px solid var(--c-soft);
+      margin-top: 36px;
+      padding: 24px;
+      border: 2px solid var(--line);
+      font-size: 14px;
+      line-height: 1.9;
     }
 
     .steps-box {
-      margin-top: 36px;
+      margin-top: 48px;
+      border-top: 2px solid var(--line);
+      padding-top: 28px;
     }
 
     h2 {
-      margin-bottom: 14px;
+      margin: 0 0 18px;
       font-size: 22px;
-      font-weight: 700;
-      color: var(--c-white);
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--c-soft);
+      font-weight: 800;
+      letter-spacing: 1px;
     }
 
     ol {
-      padding-left: 22px;
-      line-height: 2.1;
-      color: var(--c-white);
       margin: 0;
+      padding-left: 22px;
+      line-height: 2;
     }
 
     code {
-      background: var(--c-soft);
-      color: var(--c-white);
-      padding: 4px 8px;
-      border-radius: 6px;
+      background: var(--line);
+      color: var(--white);
+      padding: 3px 6px;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     footer {
-      margin-top: 48px;
-      text-align: center;
+      margin-top: 56px;
+      padding-top: 16px;
+      border-top: 2px solid var(--line);
       font-size: 12px;
-      color: var(--c-soft);
+      letter-spacing: 1px;
+      color: var(--line);
+      text-align: center;
     }
   </style>
 </head>
@@ -130,6 +128,8 @@
   <div class="container">
     <h1>Chrome 廣告阻擋器</h1>
     <p class="subtitle">乾淨的網路體驗，從這裡開始</p>
+
+    <div class="divider"></div>
 
     <div class="download-section">
       <a
@@ -160,7 +160,7 @@
     </div>
 
     <footer>
-      本網頁僅供學術與技術分享用途。
+      本網頁僅供學術與技術分享用途
     </footer>
   </div>
 </body>
