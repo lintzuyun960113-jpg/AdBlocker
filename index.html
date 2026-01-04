@@ -20,10 +20,25 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background: linear-gradient(180deg, #0B132B 0%, #1C2541 100%);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
         "Noto Sans TC", sans-serif;
       color: var(--white);
+      position: relative;
+    }
+
+    /* 幾何線條背景裝飾 */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: -40px;
+      width: 120%;
+      height: 60%;
+      border-top: 2px solid var(--line);
+      border-bottom: 2px solid var(--line);
+      opacity: 0.05;
+      pointer-events: none;
     }
 
     /* 海報本體 */
@@ -32,6 +47,7 @@
       margin: 80px auto 140px;
       padding: 80px 72px;
       background: var(--poster);
+      position: relative;
     }
 
     h1 {
@@ -39,6 +55,17 @@
       font-size: 52px;
       font-weight: 900;
       letter-spacing: 3px;
+      position: relative;
+    }
+
+    /* 標題下方裝飾線 */
+    h1::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 16px;
     }
 
     .subtitle {
@@ -59,9 +86,9 @@
     .actions {
       margin-top: 80px;
       display: flex;
-      justify-content: flex-start;  /* 左對齊 */
+      justify-content: flex-start;
       align-items: center;
-      gap: 96px;                     /* 按鈕之間距離很大，海報感 */
+      gap: 96px; /* 大間距 */
     }
 
     .btn {
@@ -73,11 +100,28 @@
       border: 2px solid var(--accent);
       background: var(--accent);
       color: var(--bg);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      background: var(--line);
     }
 
     .btn.secondary {
       background: transparent;
       color: var(--accent);
+    }
+
+    .btn.secondary::after {
+      content: "→";
+      margin-left: 8px;
+      font-weight: 900;
+      transition: margin-left 0.2s;
+    }
+
+    .btn.secondary:hover::after {
+      margin-left: 16px;
     }
 
     /* 安裝教學區 */
@@ -95,10 +139,35 @@
     }
 
     ol {
-      padding-left: 22px;
+      padding-left: 32px;
       line-height: 2.2;
       font-size: 16px;
       margin: 0;
+      counter-reset: step;
+    }
+
+    ol li {
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 24px;
+    }
+
+    /* 安裝步驟色塊數字 */
+    ol li::before {
+      content: counter(step);
+      counter-increment: step;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
     }
 
     code {
@@ -108,7 +177,7 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     }
 
-    /* 低存在感提示（滑下來才看到） */
+    /* 低存在感提示 */
     .note {
       margin-top: 64px;
       font-size: 13px;
