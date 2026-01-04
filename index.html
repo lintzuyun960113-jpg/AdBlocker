@@ -32,7 +32,6 @@
       margin: 80px auto 140px;
       padding: 80px 72px;
       background: var(--poster);
-      position: relative;
     }
 
     h1 {
@@ -62,7 +61,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 96px; /* 按鈕之間距離很大 */
+      gap: 96px; /* 按鈕之間距離 */
     }
 
     .btn {
@@ -101,22 +100,23 @@
       letter-spacing: 2px;
     }
 
-    ol {
+    /* 修正 counter 重複 */
+    .install ol {
+      counter-reset: step; /* 只針對這個列表重置 */
       padding-left: 32px;
       line-height: 2.2;
       font-size: 16px;
       margin: 0;
-      counter-reset: step;
     }
 
-    ol li {
+    .install ol li {
       position: relative;
       padding-left: 40px;
       margin-bottom: 24px;
     }
 
     /* 安裝步驟色塊數字 */
-    ol li::before {
+    .install ol li::before {
       content: counter(step);
       counter-increment: step;
       position: absolute;
@@ -176,13 +176,13 @@
     <div id="install" class="install">
       <h2>安裝教學</h2>
 
-      <ul>
+      <ol>
         <li>下載 <code>AdBlocker.zip</code> 並解壓縮。</li>
         <li>在 Chrome 網址列輸入 <code>chrome://extensions</code>。</li>
         <li>開啟右上角「開發人員模式」。</li>
         <li>點擊「載入未封裝項目」。</li>
         <li>選擇解壓後的資料夾。</li>
-      </ul>
+      </ol>
 
       <div class="note">
         ⚠️ 若 Chrome 顯示「無法安全下載」，請至下載列表選擇「保留」。
